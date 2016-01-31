@@ -28,6 +28,8 @@
 <li>Ping</li>
 <li>Threads</li>
 <li>Healthcheck</li>
+<h1><p style="color:red">This will check whether rest-prime-service is healthy or no</p></h1>
+<a href="http://localhost:8889/healthcheck?pretty=true">Healthcheck</a>
 </p>
 
 <h1>Some curl commands to try</h1>

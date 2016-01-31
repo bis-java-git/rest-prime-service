@@ -6,6 +6,7 @@ import ch.qos.logback.core.joran.spi.JoranException;
 import com.bis.config.PrimeServiceConfiguration;
 import com.bis.exception.ResourceExceptionHandler;
 import com.bis.exception.PrimesExceptionHandler;
+import com.bis.healthcheck.PrimesHealthCheck;
 import com.bis.service.PrimeNumberServiceImpl;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -33,6 +34,7 @@ public class PrimeServiceRunner extends Application<PrimeServiceConfiguration> {
         environment.jersey().register(new PrimeResource(new PrimeNumberServiceImpl()));
         environment.jersey().register(new PrimesExceptionHandler());
         environment.jersey().register(new ResourceExceptionHandler());
+        environment.healthChecks().register("RestPrimesService", new PrimesHealthCheck());
         environment.jersey().register(new AbstractBinder() {
             @Override
             protected void configure() {
