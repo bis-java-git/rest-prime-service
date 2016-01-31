@@ -34,24 +34,7 @@ public class PrimeResource {
         }
     }
 
-    @GET
-    @Path(value = "help")
-    @Produces(MediaType.TEXT_HTML)
-    @Timed
-    public String help(@PathParam("upperNumber") final Integer upperLimit) throws InvalidNumberException {
-        LOGGER.debug("help");
-        final StringBuffer htmlBuilder = new StringBuffer(1000);
-        htmlBuilder.append("<html>").append("\n").append("<body>").append("<h1>Rest prime number service</h1>")
-        .append("\n").append("<br/>").append("<br/>").append("\n").append("<a href='http://localhost:8888/primes/13'>http://localhost:8888/primes/13</a>")
-        .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithstream/13'>http://localhost:8888/primeswithstream/13</a>")
-        .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithparallelstream/13'>http://localhost:8888/primeswithparallelstream/13</a>")
-        .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithforkandjoin/13'>http://localhost:8888/primeswithforkandjoin/13</a>")
-        .append("\n").append("<br/>").append("<br/>").append("\n")
-        .append("<a href='http://localhost:8888/primeswithforkandjoinwithstream/13'>http://localhost:8888/primeswithforkandjoin/13</a>")
-        .append("\n").append("<br/>").append("<br/>").append("\n").append("</body>").append("\n").append("</html>");
 
-        return htmlBuilder.toString();
-    }
 
     @GET
     @Path(value = "primes/{upperNumber}")
@@ -105,5 +88,24 @@ public class PrimeResource {
         } catch (ExecutionException | InterruptedException exc) {
             throw new InternalServerErrorException("Internal resource busy");
         }
+    }
+
+    @GET
+    @Path(value = "help")
+    @Produces(MediaType.TEXT_HTML)
+    @Timed
+    public String help(@PathParam("upperNumber") final Integer upperLimit) throws InvalidNumberException {
+        LOGGER.debug("help");
+        final StringBuffer htmlBuilder = new StringBuffer(1000);
+        htmlBuilder.append("<html>").append("\n").append("<body>").append("<h1>Rest prime number service</h1>")
+                .append("\n").append("<br/>").append("<br/>").append("\n").append("<a href='http://localhost:8888/primes/13'>http://localhost:8888/primes/13</a>")
+                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithstream/13'>http://localhost:8888/primeswithstream/13</a>")
+                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithparallelstream/13'>http://localhost:8888/primeswithparallelstream/13</a>")
+                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithforkandjoin/13'>http://localhost:8888/primeswithforkandjoin/13</a>")
+                .append("\n").append("<br/>").append("<br/>").append("\n")
+                .append("<a href='http://localhost:8888/primeswithforkandjoinwithstream/13'>http://localhost:8888/primeswithforkandjoin/13</a>")
+                .append("\n").append("<br/>").append("<br/>").append("\n").append("</body>").append("\n").append("</html>");
+
+        return htmlBuilder.toString();
     }
 }
