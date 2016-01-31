@@ -27,10 +27,10 @@
 <li>Metrics</li>
 <li>Ping</li>
 <li>Threads</li>
-<li style="color:red;">Healthcheck</li>
-<p>This will check whether rest-prime-service is healthy or no</p>
+<h1>
+<li style="color:red;">Healthcheck - This will check whether rest-prime-service is healthy or no</li>
 <a href="http://localhost:8889/healthcheck?pretty=true">Healthcheck</a>
-</p>
+</h1>
 
 <h1>Some curl commands to try</h1>
 <p>curl "http://localhost:8888/primes/15"</p>
