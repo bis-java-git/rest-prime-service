@@ -98,12 +98,12 @@ public class PrimeResource {
         LOGGER.debug("help");
         final StringBuffer htmlBuilder = new StringBuffer(1000);
         htmlBuilder.append("<html>").append("\n").append("<body>").append("<h1>Rest prime number service</h1>")
-                .append("\n").append("<br/>").append("<br/>").append("\n").append("<a href='http://localhost:8888/primes/13'>http://localhost:8888/primes/13</a>")
-                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithstream/13'>http://localhost:8888/primeswithstream/13</a>")
-                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithparallelstream/13'>http://localhost:8888/primeswithparallelstream/13</a>")
-                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithforkandjoin/13'>http://localhost:8888/primeswithforkandjoin/13</a>")
+                .append("\n").append("<br/>").append("<br/>").append("\n").append("<a href='http://localhost:8888/primes/15'>http://localhost:8888/primes/15</a>")
+                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithstream/15'>http://localhost:8888/primeswithstream/15</a>")
+                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithparallelstream/15'>http://localhost:8888/primeswithparallelstream/15</a>")
+                .append("\n").append("<br/>").append("<br/>").append("<a href='http://localhost:8888/primeswithforkandjoin/15'>http://localhost:8888/primeswithforkandjoin/15</a>")
                 .append("\n").append("<br/>").append("<br/>").append("\n")
-                .append("<a href='http://localhost:8888/primeswithforkandjoinwithstream/13'>http://localhost:8888/primeswithforkandjoin/13</a>")
+                .append("<a href='http://localhost:8888/primeswithforkandjoinwithstream/15'>http://localhost:8888/primeswithforkandjoin/15</a>")
                 .append("\n").append("<br/>").append("<br/>").append("\n").append("</body>").append("\n").append("</html>");
 
         return htmlBuilder.toString();

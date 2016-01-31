@@ -9,15 +9,15 @@
 <h1>java -jar rest-prime-service.jar -XX:+PrintGCDateStamps -verbose:gc -XX:+PrintGCDetails -Xloggc:"./logs/gc.log"</h1>
 
 <p>Checking prime rest service</p>
-<a href='http://localhost:8888/primes/13'>http://localhost:8888/primes/13/</a>
+<a href='http://localhost:8888/primes/15'>http://localhost:8888/primes/15/</a>
 </br>
-<a href='http://localhost:8888/primeswithstream/13'>http://localhost:8888/primeswithstream/13/</a>
+<a href='http://localhost:8888/primeswithstream/15'>http://localhost:8888/primeswithstream/15/</a>
 <br/>
-<a href='http://localhost:8888/primeswithparallelstream/13'>http://localhost:8888/primeswithparallelstream/13/</a>
+<a href='http://localhost:8888/primeswithparallelstream/15'>http://localhost:8888/primeswithparallelstream/15/</a>
 <br/>
-<a href='http://localhost:8888/primeswithforkandjoin/13'>http://localhost:8888/primeswithforkandjoin/13/</a>
+<a href='http://localhost:8888/primeswithforkandjoin/15'>http://localhost:8888/primeswithforkandjoin/15/</a>
 <br/>
-<a href='http://localhost:8888/primeswithforkandjoinwithstream/13'>http://localhost:8888/primeswithforkandjoinwithstream/13/</a>
+<a href='http://localhost:8888/primeswithforkandjoinwithstream/15'>http://localhost:8888/primeswithforkandjoinwithstream/15/</a>
 </br>
 
 <p>Checking prime rest service health check</p>
@@ -31,11 +31,11 @@
 </p>
 
 <h1>Some curl commands to try</h1>
-<p>curl "http://localhost:8888/primes/13"</p>
-<p>curl "http://localhost:8888/primeswithstream/13"</p>
-<p>curl "http://localhost:8888/primeswithparallelstream/13"</p>
-<p>curl "http://localhost:8888/primeswithforkandjoin/13"</p>
-<p>curl "http://localhost:8888/primeswithforkandjoinwithstream/13"</p>
+<p>curl "http://localhost:8888/primes/15"</p>
+<p>curl "http://localhost:8888/primeswithstream/15"</p>
+<p>curl "http://localhost:8888/primeswithparallelstream/15"</p>
+<p>curl "http://localhost:8888/primeswithforkandjoin/15"</p>
+<p>curl "http://localhost:8888/primeswithforkandjoinwithstream/15"</p>
 
 
 
