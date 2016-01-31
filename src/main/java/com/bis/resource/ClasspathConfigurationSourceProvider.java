@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class ClasspathConfigurationSourceProvider implements io.dropwizard.configuration.ConfigurationSourceProvider {
+
     @Override
     public InputStream open(String path) throws IOException {
         InputStream resourceAsStream = ClasspathConfigurationSourceProvider.class.getClassLoader().getResourceAsStream(path);

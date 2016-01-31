@@ -31,20 +31,20 @@ public class IsPrimeTest {
             return false;
         }
         int topNumber = (int) Math.sqrt(number) + 1;
-        return IntStream.iterate(3, i -> i + 2).limit(topNumber / 2 - 1).filter(n -> number % n == 0).findAny().isPresent() ? false : true;
+        return !IntStream.iterate(3, i -> i + 2).limit(topNumber / 2 - 1).filter(n -> number % n == 0).findAny().isPresent();
     }
 
     public void doWork() {
         final StopWatch stopWatch = new StopWatch();
         stopWatch.start();
-        List<Integer> list = rangeClosed(2, 1_000_000).parallel().filter((number1) -> isPrime(number1)).boxed().collect(toList());
+        List<Integer> list = rangeClosed(2, 1_000_000).parallel().filter(this::isPrime).boxed().collect(toList());
         stopWatch.stop();
         System.out.println("Time taken for isPrime1 " + stopWatch.getTime() + " ms");
         System.out.println("isPrime1 size " + list.size());
 
         stopWatch.reset();
         stopWatch.start();
-        list = rangeClosed(2, 1_000_000).parallel().filter((number) -> isPrime2(number)).boxed().collect(toList());
+        list = rangeClosed(2, 1_000_000).parallel().filter(this::isPrime2).boxed().collect(toList());
         stopWatch.stop();
         System.out.println("Time taken for isPrime2 " + stopWatch.getTime() + " ms");
         System.out.println("isPrime2 size " + list.size());

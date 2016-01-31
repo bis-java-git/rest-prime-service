@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PrimeResourceTest {
 
-    private static final Integer MAX_LIMIT_OVER = 1000000 + 1;
+    private static final Integer MAX_LIMIT_OVER =1_000_000 + 1;
 
     private static final Integer TEST_ITEMS = 15;
 

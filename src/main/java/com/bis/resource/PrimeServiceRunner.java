@@ -15,6 +15,7 @@ import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.slf4j.LoggerFactory;
 
 public class PrimeServiceRunner extends Application<PrimeServiceConfiguration> {
+
     @Override
     public void initialize(final Bootstrap<PrimeServiceConfiguration> bootstrap) {
         bootstrap.setConfigurationSourceProvider(new ClasspathConfigurationSourceProvider());

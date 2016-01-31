@@ -3,8 +3,8 @@ package com.bis.resource;
 import com.bis.exception.InvalidNumberException;
 import com.bis.service.PrimeNumberService;
 import com.codahale.metrics.annotation.Timed;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
@@ -30,11 +30,9 @@ public class PrimeResource {
     private void validate(final Integer upperLimit) throws InvalidNumberException {
         if (upperLimit < 0 || upperLimit > MAX_LIMIT) {
             LOGGER.error("Bad request invaild number {} range is 0 to {}", upperLimit, MAX_LIMIT);
-            throw new InvalidNumberException("Bad request invaild number range 0 to " + MAX_LIMIT);
+            throw new InvalidNumberException("Bad request invalid number range 0 to " + MAX_LIMIT);
         }
     }
-
-
 
     @GET
     @Path(value = "primes/{upperNumber}")
@@ -75,7 +73,6 @@ public class PrimeResource {
             throw new InternalServerErrorException("Internal resource busy");
         }
     }
-
 
     @GET
     @Path(value = "primeswithforkandjoin/{upperNumber}")

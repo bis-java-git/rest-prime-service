@@ -9,9 +9,9 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class PrimeNumberServiceWithStreamParameterizedTest extends AbstractPrimeServiceParameterizedTest {
+public class PrimeNumberServiceWithStreamParameterizeTest extends AbstractPrimeServiceParameterizeTest {
 
-    public PrimeNumberServiceWithStreamParameterizedTest(Integer upperLimit, List<Integer> expectedResult) {
+    public PrimeNumberServiceWithStreamParameterizeTest(Integer upperLimit, List<Integer> expectedResult) {
         super(upperLimit, expectedResult);
     }
 

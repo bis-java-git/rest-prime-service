@@ -1,6 +1,6 @@
 <p> Please read following comments to get started</p>
 
-<p>To generate a jar file, navigate to the project folder and type:</p>
+<p>To generate a rest-prime-service.jar file, navigate to the project folder and type:</p>
 <h1>mvn clean install</h1>
 <p>This will run all the Unit tests, Performance test and Integration test and build a rest-prime-service.jar file</p>
 
@@ -32,7 +32,9 @@
 <a href="http://localhost:8889/healthcheck?pretty=true">Healthcheck</a>
 </h1>
 
-<h1>Some curl commands to try</h1>
+<h1>Some rest prime serivces to try with curl command</h1>
+<p>curl_script.bat is located in the scripts folder</p>
+<br/>
 <p>curl "http://localhost:8888/primes/15"</p>
 <p>curl "http://localhost:8888/primeswithstream/15"</p>
 <p>curl "http://localhost:8888/primeswithparallelstream/15"</p>

@@ -2,7 +2,6 @@ package com.bis.service;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.stream.IntStream;
 
 public interface PrimeNumberService {
 

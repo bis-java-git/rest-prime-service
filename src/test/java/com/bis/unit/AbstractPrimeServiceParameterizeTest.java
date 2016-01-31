@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class AbstractPrimeServiceParameterizedTest {
+public class AbstractPrimeServiceParameterizeTest {
 
     protected final PrimeNumberService primeNumberService = new PrimeNumberServiceImpl();
 
@@ -17,7 +17,7 @@ public class AbstractPrimeServiceParameterizedTest {
 
     protected List<Integer> expectedResult;
 
-    public AbstractPrimeServiceParameterizedTest(final Integer upperLimit, final List<Integer> expectedResult) {
+    public AbstractPrimeServiceParameterizeTest(final Integer upperLimit, final List<Integer> expectedResult) {
         this.expectedResult = expectedResult;
         this.upperLimit = upperLimit;
 

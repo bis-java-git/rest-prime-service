@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class PrimeNumberServiceParametrizedTest extends AbstractPrimeServiceParameterizedTest {
+public class PrimeNumberServiceParametrizedTest extends AbstractPrimeServiceParameterizeTest {
 
     @Test
     public void testValidPrimeNumbers() {

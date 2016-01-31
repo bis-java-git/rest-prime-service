@@ -11,7 +11,7 @@ import javax.ws.rs.client.ClientBuilder;
 
 public class PrimesHealthCheck extends HealthCheck {
 
-    private final String URL = "http://localhost:8888/primes/15";
+    private static final String URL = "http://localhost:8888/primes/15";
 
     private Boolean getHealthCheck() {
         final ClientConfig clientConfig = new ClientConfig();
@@ -27,6 +27,6 @@ public class PrimesHealthCheck extends HealthCheck {
 
     @Override
     protected Result check() throws Exception {
-        return getHealthCheck() == true ? Result.healthy() : Result.unhealthy("Service has not responded positively");
+        return getHealthCheck() ? Result.healthy() : Result.unhealthy("Service has not responded positively");
     }
 }

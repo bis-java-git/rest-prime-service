@@ -10,9 +10,9 @@ import java.util.concurrent.ExecutionException;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class PrimeNumberServiceForkAndPoolParameterizedTest extends AbstractPrimeServiceParameterizedTest {
+public class PrimeNumberServiceForkAndPoolParameterizeTest extends AbstractPrimeServiceParameterizeTest {
 
-    public PrimeNumberServiceForkAndPoolParameterizedTest(Integer upperLimit, List<Integer> expectedResult) {
+    public PrimeNumberServiceForkAndPoolParameterizeTest(Integer upperLimit, List<Integer> expectedResult) {
         super(upperLimit, expectedResult);
     }
 
