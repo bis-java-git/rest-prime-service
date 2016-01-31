@@ -27,8 +27,8 @@
 <li>Metrics</li>
 <li>Ping</li>
 <li>Threads</li>
-<li>Healthcheck</li>
-<h1><p style="color:red">This will check whether rest-prime-service is healthy or no</p></h1>
+<li style="color:red;">Healthcheck</li>
+<p>This will check whether rest-prime-service is healthy or no</p>
 <a href="http://localhost:8889/healthcheck?pretty=true">Healthcheck</a>
 </p>
 
