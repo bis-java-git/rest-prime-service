@@ -2,10 +2,10 @@
 
 <p>To generate a jar file, navigate to the project folder and type:</p>
 <h1>mvn clean install</h1>
-<p>This will run all the Unit tests, Performance test and Integration test and build a shaded jar file</p>
+<p>This will run all the Unit tests, Performance test and Integration test and build a rest-prime-service.jar file</p>
 
-<p>To run rest-prime-service.jar</p>
-<p>Navigate to the folder where jar is resident mostly would be in target folder unless settings are different</p>
+<p>To run rest-prime-service.jar file</p>
+<p>Navigate to the folder where rest-prime-service.jar is resident mostly would be in target folder unless settings are different</p>
 <h1>java -jar rest-prime-service.jar -XX:+PrintGCDateStamps -verbose:gc -XX:+PrintGCDetails -Xloggc:"./logs/gc.log"</h1>
 
 <p>Checking prime rest service</p>
