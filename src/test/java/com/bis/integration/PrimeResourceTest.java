@@ -84,7 +84,6 @@ public class PrimeResourceTest {
         checkErrorResponse(getClient().target("http://localhost:8888/primeswithparallelstream/" + MAX_LIMIT_OVER).request().get(), BAD_REQUEST_CODE);
         checkErrorResponse(getClient().target("http://localhost:8888/primeswithforkandjoin/" + MAX_LIMIT_OVER).request().get(), BAD_REQUEST_CODE);
         checkErrorResponse(getClient().target("http://localhost:8888/primeswithforkandjoinwithstream/" + MAX_LIMIT_OVER).request().get(), BAD_REQUEST_CODE);
-
     }
 
     @Test
@@ -106,6 +105,5 @@ public class PrimeResourceTest {
         checkResponse(getClient().target("http://localhost:8888/primeswithparallelstream/" + ONE).request().get(), INCLUSIVE_BLANK_ITEM_LIST);
         checkResponse(getClient().target("http://localhost:8888/primeswithforkandjoin/" + ONE).request().get(), INCLUSIVE_BLANK_ITEM_LIST);
         checkResponse(getClient().target("http://localhost:8888/primeswithforkandjoinwithstream/" + ONE).request().get(), INCLUSIVE_BLANK_ITEM_LIST);
-
     }
 }

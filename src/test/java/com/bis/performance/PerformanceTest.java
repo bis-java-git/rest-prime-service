@@ -18,7 +18,7 @@ public class PerformanceTest {
 
     private final static Logger LOGGER = LoggerFactory.getLogger("com.bis.performance.PerformanceTest");
 
-    private static final Integer MAX_ITEMS_FOR_PERFORMANCE_TEST = 1000000;
+    private static final Integer MAX_ITEMS_FOR_PERFORMANCE_TEST = 1_000_000;
 
     private static final long EXPECTED_PRIMES = 78498L;
 
@@ -33,9 +33,14 @@ public class PerformanceTest {
         LOGGER.debug(message, (stopWatch.getTime()));
     }
 
-    @Test(timeout = 1000)
-    public void forkAndJoinPerformanceWithStreamTest() {
+    @Test(timeout = 500)
+    public void parallelPerformanceTest() throws InterruptedException, ExecutionException {
+        Function<Integer, List<Integer>> function = primeNumberService::getPrimeNumbersWithParallelStream;
+        functionalTest(MAX_ITEMS_FOR_PERFORMANCE_TEST, function, "Parallel Total time in {} ms ");
+    }
 
+    @Test(timeout = 10000)
+    public void forkAndJoinPerformanceWithStreamTest() {
         Function<Integer, List<Integer>> function = (upperLimit) -> {
             try {
                 return primeNumberService.getPrimeNumberUsingForkAndPoolWithStream(upperLimit);
@@ -44,13 +49,11 @@ public class PerformanceTest {
             }
 
         };
-
         functionalTest(MAX_ITEMS_FOR_PERFORMANCE_TEST, function, "ForkAndJoin with stream Total time in {} ms ");
     }
 
     @Test(timeout = 2000)
     public void forkAndJoinPerformanceWithStream2Test() {
-
         Function<Integer, List<Integer>> function = (upperLimit) -> {
             try {
                 return primeNumberService.getPrimeNumberUsingForkAndPoolWithStream2(upperLimit);
@@ -58,13 +61,11 @@ public class PerformanceTest {
                 return Collections.emptyList();
             }
         };
-
         functionalTest(MAX_ITEMS_FOR_PERFORMANCE_TEST, function, "ForkAndJoin with stream 2 Total time in {} ms ");
     }
 
     @Test(timeout = 1000)
     public void forkAndJoinPerformanceTest() throws InterruptedException, ExecutionException {
-
         Function<Integer, List<Integer>> function = (Integer upperLimit) -> {
             try {
                 return primeNumberService.getPrimeNumberUsingForkAndPool(upperLimit);
@@ -82,13 +83,7 @@ public class PerformanceTest {
         functionalTest(MAX_ITEMS_FOR_PERFORMANCE_TEST, function, "Sequential Total time in {} ms ");
     }
 
-    @Test(timeout = 500)
-    public void parallelPerformanceTest() throws InterruptedException, ExecutionException {
-        Function<Integer, List<Integer>> function = primeNumberService::getPrimeNumbersWithParallelStream;
-        functionalTest(MAX_ITEMS_FOR_PERFORMANCE_TEST, function, "Parallel Total time in {} ms ");
-    }
-
-    @Test(timeout = 500)
+    @Test(timeout = 5000)
     public void simplePerformanceTest() throws InterruptedException, ExecutionException {
         Function<Integer, List<Integer>> function = primeNumberService::getPrimeNumbers;
         functionalTest(MAX_ITEMS_FOR_PERFORMANCE_TEST, function, "Simple Total time in {} ms");

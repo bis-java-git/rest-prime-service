@@ -10,7 +10,7 @@ public class AbstractPrimeServiceTest {
 
     protected final PrimeNumberService primeNumberService = new PrimeNumberServiceImpl();
 
-    public final static Integer MAXIMUM_PRIME_NUMBER= 100000;
+    public final static Integer MAXIMUM_PRIME_NUMBER= 1_000_00;
 
     public final static int EXPECTED_PRIME_NUMBERS_FOR_100000=9592;
 

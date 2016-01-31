@@ -1,8 +1,8 @@
 package com.bis.service;
 
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.IntStream;
 
 public interface PrimeNumberService {
 
@@ -16,7 +16,7 @@ public interface PrimeNumberService {
 
     List<Integer> getPrimeNumberUsingForkAndPool(final Integer upperLimit) throws ExecutionException, InterruptedException;
 
-    public List<Integer> getPrimeNumberUsingForkAndPoolWithStream2(final Integer upperLimit) throws ExecutionException, InterruptedException ;
+    public List<Integer> getPrimeNumberUsingForkAndPoolWithStream2(final Integer upperLimit) throws ExecutionException, InterruptedException;
 
     default Boolean isPrime(final Integer number){
         if ( number > 2 && number%2 == 0 ) {
